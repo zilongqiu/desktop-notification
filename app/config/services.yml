@@ -1,0 +1,10 @@
+# Learn more about services, parameters and containers at
+# http://symfony.com/doc/current/book/service_container.html
+parameters:
+#    parameter_name: value
+
+services:
+    kernel.listener.command_dispatch:
+        class: AppBundle\EventListener\ConsoleExceptionListener
+        tags:
+            - { name: kernel.event_listener, event: console.exception }
